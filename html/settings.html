@@ -47,7 +47,7 @@
             </div>
             
             <div class="asside-right-h">
-                <img class="avatar" src="../media/img/people/generateAI-00001.jpg" alt="">
+                <img class="avatar" src="../media/img/people/generateAI-00006.jpg" alt="">
             </div>
         </div>
     </header>
@@ -67,16 +67,168 @@
         
         <div class="asside-center">
             <!-- Контент по центру -->
-             center
-             <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat eius id ab quas ad quo consequuntur, rem assumenda? Sint laboriosam ipsa porro vel dolore corporis dignissimos architecto, blanditiis nobis commodi minus adipisci dolorum repellat, numquam repellendus! Qui assumenda nulla, eius voluptatum distinctio iure doloremque. Eos iusto tempora mollitia ipsum delectus quas id, molestias, odio culpa fugiat ad. Praesentium veritatis quae dignissimos unde, consectetur perferendis. Velit, magni architecto, quos natus eum quia laborum corporis nobis non, iste doloribus minima reprehenderit expedita nemo maxime voluptatum sequi dolorum molestiae. Nesciunt illo earum at, nam obcaecati iusto autem animi voluptates temporibus tenetur repudiandae facere saepe facilis debitis, expedita asperiores tempore veniam ipsam atque quam non quasi! Ipsa amet quaerat modi quidem voluptates optio accusantium ut hic eligendi eum vel provident ea repellendus, quo saepe, unde neque, sit architecto? Doloremque impedit cum labore reprehenderit explicabo est omnis culpa deleniti, iste vitae dolorum quaerat cupiditate totam libero ad, minima qui voluptatem odio animi magni sequi maxime ut necessitatibus. Molestiae sit, ipsa, inventore asperiores eligendi illum amet maiores nobis odit neque doloribus esse magnam repellat totam, reiciendis tempore corporis quibusdam! Facilis officiis impedit eius eveniet deleniti earum ex dolores voluptates cumque laudantium! Facere, veritatis. Facilis, molestiae sapiente.</h1>
+            <div class="group-btn">
+                <button class="btn dark accordion show" data-target="content1">Основное</button>
+                <button class="btn dark accordion" data-target="content2">Безопасность</button>
+                <button class="btn dark accordion" data-target="content3">Приватность</button>
+                <button class="btn danger end">Выйти</button>
+            </div>
+
+            <div class="accordion-content show" id="content1">
+                <div class="selected_themes">
+                    <div>
+                        <input type="radio" id="dark" name="switchThemes" value="dark" checked />
+                        <label for="dark">
+                            <div class="theme_block dark">
+                                <span>Мы любим животных и стараемся поддерживать тех из них, кому не посчастливилось иметь ласковых хозяев и тёплый кров.</span>
+                                <a href="#">Ссылка</a>
+                                <button>Кнопка</button>
+                            </div>
+                        </label>
+                        <span class="selected_theme_block">Текущая</span>
+                    </div>
+                    <div>
+                        <input type="radio" id="light" name="switchThemes" value="light" />
+                        <label for="light">
+                            <div class="theme_block light">
+                                <span>Мы любим животных и стараемся поддерживать тех из них, кому не посчастливилось иметь ласковых хозяев и тёплый кров.</span>
+                                <a href="#">Ссылка</a>
+                                <button>Кнопка</button>
+                            </div>
+                        </label>
+                        <span class="selected_theme_block d-none">Текущая</span>
+                    </div>
+                    <!-- <div class="theme_block_main">
+                        <div class="theme_block dark active">
+                            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti fugit ea molestias at iusto fuga? Hic saepe culpa doloribus earum!</span>
+                            <a href="#">Ссылка</a>
+                            <button>Кнопка</button>
+                        </div>
+                        <span class="selected_theme_block">Текущая</span>
+                    </div>
+                    <div class="theme_block_main">
+                        <div class="theme_block light">
+                            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti fugit ea molestias at iusto fuga? Hic saepe culpa doloribus earum!</span>
+                            <a href="#">Ссылка</a>
+                            <button>Кнопка</button>
+                        </div>
+                        <span class="selected_theme_block d-none">Текущая</span>
+                    </div> -->
+                </div>
+                <div class="dropdown">
+                    <label for="filter-text">Фильтр нецензурных выражений:</label>
+
+                    <select name="filter-text" id="filter-text">
+                      <option value="on">Включить</option>
+                      <option value="off">Отключить</option>
+                    </select> 
+                </div>
+                <!-- <div>Перенос музыки из других площадок</div> -->
+                <div class="dropdown">
+                    <label for="filter-lang">Язык:</label>
+
+                    <select name="filter-lang" id="filter-lang">
+                      <option value="ru">Русский</option>
+                      <option value="en">Английский</option>
+                      <option value="en">Китайский</option>
+                    </select> 
+                </div>
+            </div>
+
+            <div class="accordion-content" id="content2">
+                <div class="safety">
+                    <div>
+                        <span>Телефон:</span><br>
+                        <small>89******65</small>
+                    </div>
+                    <a href="#">Изменить</a>
+                </div>
+                <div class="safety">
+                    <div>
+                        <span>Почта:</span><br>
+                        <small>ba.batya2018@yandex.ru</small>
+                    </div>
+                    <a href="#">Изменить</a>
+                </div>
+                <div class="safety">
+                    <div>
+                        <span>Пароль:</span><br>
+                        <small>•••••••••••</small>
+                    </div>
+                    <a href="#">Изменить</a>
+                </div>
+                <div class="safety">
+                    <div>
+                        <span>Двухфакторная аутентификация:</span><br>
+                        <small>Подключено</small>
+                    </div>
+                    <a href="#">Перейти</a>
+                </div>
+                <div class="safety">
+                    <div>
+                        <span>История активности:</span><br>
+                        <small>последеняя 20 октября</small>
+                    </div>
+                    <a href="#">Перейти</a>
+                </div>
+                <button class="btn dangerLarg w-100">Завершить другие сеансы</button>
+            </div>
+
+            <div class="accordion-content" id="content3">
+                <div class="dropdown">
+                    <label for="filter-lang">Кто видит мой профиль:</label>
+
+                    <select name="filter-lang" id="filter-lang">
+                        <option value="all">Все</option>
+                        <option value="friends">Только друзья</option>
+                        <option value="none">Ни кто</option>
+                    </select> 
+                </div>
+                <div class="dropdown">
+                    <label for="filter-lang">Кто видит мои изображения:</label>
+
+                    <select name="filter-lang" id="filter-lang">
+                        <option value="all">Все</option>
+                        <option value="friends">Только друзья</option>
+                        <option value="none">Ни кто</option>
+                    </select> 
+                </div>
+                <div class="dropdown">
+                    <label for="filter-lang">Кто видит список моих друзей:</label>
+
+                    <select name="filter-lang" id="filter-lang">
+                        <option value="all">Все</option>
+                        <option value="friends">Только друзья</option>
+                        <option value="none">Ни кто</option>
+                    </select> 
+                </div>
+                <div class="dropdown">
+                    <label for="filter-lang">Кто видит список моей музыки:</label>
+
+                    <select name="filter-lang" id="filter-lang">
+                        <option value="all">Все</option>
+                        <option value="friends">Только друзья</option>
+                        <option value="none">Ни кто</option>
+                    </select> 
+                </div>
+                <div class="dropdown">
+                    <label for="filter-lang">Кто может мне писать сообщения:</label>
+
+                    <select name="filter-lang" id="filter-lang">
+                        <option value="all">Все</option>
+                        <option value="friends">Только друзья</option>
+                        <option value="none">Ни кто</option>
+                    </select> 
+                </div>
+            </div>
         </div>
         
         <div class="asside-right">
             <!-- Контент справа -->
-             right
         </div>
     </main>
 
+    <script src="../assets/js/RIS.js"></script>
     <script src="../assets/js/audioplayer.js"></script>
 </body>
 </html>

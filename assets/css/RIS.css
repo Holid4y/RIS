@@ -8,20 +8,69 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Переменные для светлой темы */
+:root, [data-bs-theme="light"] {
+    --bs-body-bg: #e6eaee;  /* Светлый 0 цвет */
+    --bs-second-bg: #f8f9fa; /* Светлый 1 цвет */
+    --bs-second-bg-active: #f8f9fa; /* Светлый 1 цвет - нажатие */
+    --bs-third-bg: #dbdbdb; /* Светлый 2 цвет */
+
+    --bs-body-color: #575757; /* Цвет текста */
+    --bs-body-second-color: #646464; /* Второй цвет текста */
+
+    --bs-accent-color: #49e2c1; /* Зеленый */
+    --bs-red-color: #e24949; /* Красный */
+    --bs-warning-color: #E2B749; /* Оранжевый */
+
+    --bs-accent-color-hover: #2ea188; /* Зеленый - наведение */
+    --bs-red-color-hover: #bd3d3d; /* Красный - наведение */
+    --bs-warning-color-hover: #b6933b; /* Оранжевый - наведение */
+
+    --bs-shadow: rgba(172, 170, 170, 0.2); /* Тень */
+    --bs-white-color: #FFFFFF;
+}
+
+/* Переменные для темной темы */
+[data-bs-theme="dark"] {
+    color-scheme: dark; /* Объявляем цветовую схему для браузера */
+    --bs-body-bg: #161617; /* Темный 0 цвет */
+    --bs-second-bg: #232324; /* Темный 1 цвет */
+    --bs-second-bg-active: #222224; /* Светлый 1 цвет - нажатие */
+    --bs-third-bg: #2f2d2f; /* Темный 2 цвет */
+
+    --bs-body-color: #c9cccf; /* Цвет текста */
+    --bs-body-second-color: #b0b0b0; /* Второй цвет текста */
+
+    --bs-accent-color: #49e2c1; /* Зеленый */
+    --bs-red-color: #e24949; /* Красный */
+    --bs-warning-color: #E2B749; /* Оранжевый */
+
+    --bs-accent-color-hover: #2ea188; /* Зеленый - наведение */
+    --bs-red-color-hover: #bd3d3d; /* Красный - наведение */
+    --bs-warning-color-hover: #b6933b; /* Оранжевый - наведение */
+
+    --bs-shadow: rgba(0, 0, 0, 0.2); /* Тень */
+    --bs-white-color: #FFFFFF;
+}
+
 body, html {
     width: 100%;
     height: 100%;
     overflow: hidden; /* Убираем прокрутку у body */
-    background-color: #161617; /* #222226 */
+    background-color: var(--bs-body-bg); /* Используем переменную для фона */
+    color: var(--bs-body-color); /* Текст тоже зависит от темы */
+    /* transition: 1s all ease-in; */
 }
+
 /* Стили для header */
 header {
     height: 60px;
     width: 100%;
     position: sticky;
     top: 0;
-    background-color: #232324; /* #17161b */
+    background-color: var(--bs-second-bg); /* #17161b */
     z-index: 10;
+    box-shadow: 0px 5px 5px var(--bs-body-bg);
 }
 
 header .asside-left-h {
@@ -55,7 +104,7 @@ header .asside-right-h {
     font-weight: 900;
     font-style: normal;
     font-size: 30px;
-    color: #c9cccf;
+    color: var(--bs-body-color);
 }
 
 .avatar{
@@ -101,96 +150,101 @@ header .asside-right-h {
 /* Стили для кнопок */
 .btn{
     font-size: 14px;
-    background-color: #2D2D2D;
+    background-color: var(--bs-second-bg);
     padding: 10px 15px;
     outline: none;
-    border: 1px solid #252525;
+    border: 1px solid var(--bs-second-bg);
     border-radius: 10px;
-    color: #FFFFFF;
+    color: var(--bs-white-color);
     transition: all .2s;
     width: 100%;
     min-width: 120px;
     text-align: center;
+    cursor: pointer;
 }
 .btn.primary{
-    background-color: #49E2C1;
-    border: 1px solid #49E2C1;
+    background-color: var(--bs-accent-color);
+    border: 1px solid var(--bs-accent-color);
 }
 .btn.secondary{
-    border: 1px solid #49E2C1;
-    color: #49E2C1;
+    border: 1px solid var(--bs-accent-color);
+    color: var(--bs-accent-color);
 }
 .btn.danger{
-    background-color: #232324;
-    border: 1px solid #E24949;
-    color: #E24949;
+    background-color: var(--bs-second-bg);
+    border: 1px solid var(--bs-red-color);
+    color: var(--bs-red-color);
 }
 .btn.dangerLarg{
-    background-color: #232324;
+    background-color: var(--bs-second-bg);
     padding: 15px 0px;
-    border: 1px solid #E24949;
-    color: #E24949;
+    border: 1px solid var(--bs-red-color);
+    color: var(--bs-red-color);
 }
 .btn.warning{
-    border: 1px solid #E2B749;
-    color: #E2B749;
+    border: 1px solid var(--bs-warning-color);
+    color: var(--bs-warning-color);
 }
 .btn.dark{
-    background-color: #232324;
-    border: 1px solid #232324;
-    color: #c9cccf;
+    background-color: var(--bs-second-bg);
+    border: 1px solid var(--bs-second-bg);
+    color: var(--bs-body-color);
 }
 
 .btn.primary:hover{
-    background-color: #2ea188;
-    border: 1px solid #49E2C1;
+    background-color: var(--bs-accent-color-hover);
+    border: 1px solid var(--bs-accent-color);
 }
 .btn.secondary:hover{
-    background-color: #49E2C1;
-    color: #FFFFFF;
+    background-color: var(--bs-accent-color);
+    color: var(--bs-white-color);
 }
 .btn.danger:hover{
-    background-color: #E24949;
-    color: #FFFFFF;
+    background-color: var(--bs-red-color);
+    color: var(--bs-white-color);
+}
+.btn.dangerLarg:hover{
+    background-color: var(--bs-red-color);
+    color: var(--bs-white-color);
 }
 .btn.warning:hover{
-    background-color: #E2B749;
-    color: #FFFFFF;
+    background-color: var(--bs-warning-color);
+    color: var(--bs-white-color);
 }
 .btn.dark:hover{
-    background-color: #232324;
-    border: 1px solid #c9cccf;
-    color: #c9cccf;
+    background-color: var(--bs-second-bg);
+    border: 1px solid var(--bs-body-color);
+    color: var(--bs-body-color);
 }
 .btn.light:hover{
-    border: 1px solid #49E2C1;
-    color: #49E2C1;
+    border: 1px solid var(--bs-accent-color);
+    color: var(--bs-accent-color);
 }
 
 .btn.primary:active{
-    background-color: #247e6a;
-    border: 1px solid #247e6a;
+    background-color: var(--bs-accent-color-hover);
+    border: 1px solid var(--bs-accent-color-hover);
 }
 .btn.secondary:active{
-    background-color: #2ea188;
-    color: #FFFFFF;
+    background-color: var(--bs-accent-color-hover);
+    color: var(--bs-white-color);
 }
 .btn.danger:active{
-    background-color: #bd3d3d;
-    color: #FFFFFF;
+    background-color: var(--bs-red-color-hover);
+    color: var(--bs-white-color);
 }
 .btn.warning:active{
-    background-color: #b6933b;
-    color: #FFFFFF;
+    background-color: var(--bs-warning-color-hover);
+    color: var(--bs-white-color);
 }
 .btn.dark:active{
-    background-color: #232324;
-    border: 1px solid #c9cccf;
-    color: #c9cccf;
+    background-color: var(--bs-second-bg);
+    border: 1px solid var(--bs-body-color);
+    color: var(--bs-body-color);
 }
 .btn.light:active{
-    border: 1px solid #247e6a;
-    color: #247e6a;
+    border: 1px solid var(--bs-accent-color-hover);
+    color: var(--bs-accent-color-hover);
 }
 
 .group-btn {
@@ -213,9 +267,9 @@ header .asside-right-h {
     flex-grow: 1;
 }
 .group-btn .accordion.show{
-    background-color: #232324;
-    border: 1px solid #c9cccf;
-    color: #c9cccf;
+    background-color: var(--bs-second-bg);
+    border: 1px solid var(--bs-body-color);
+    color: var(--bs-body-color);
 }
 .end {
     margin-left: auto;
@@ -235,20 +289,20 @@ header .asside-right-h {
     align-items: center;
     font-size: 17px;
     line-height: 2;
-    color: #c9cccf;
+    color: var(--bs-body-color);
     padding: 10px 15px;
     cursor: pointer;
     margin-bottom: 5px;
     border-radius: 10px;
 }
 .menu li.active {
-    background-color: #232324;
+    background-color: var(--bs-second-bg);
 }
 .menu li:hover {
-    background-color: #232324;
+    background-color: var(--bs-second-bg);
 }
 .menu li:active {
-    background-color: #222224;
+    background-color: var(--bs-second-bg-active);
 }
 
 .menu li span{
@@ -261,7 +315,7 @@ header .asside-right-h {
 
 /* Стили Профиля */
 .profile_header {
-    color: white;
+    color: var(--bs-white-color);
     width: 100%;
     margin: 0 auto;
     margin-bottom: 15px;
@@ -291,11 +345,12 @@ header .asside-right-h {
     font-size: 24px;
     font-weight: bold;
     margin: 0;
+    color: var(--bs-body-color);
 }
 
 .profile_header-main h3 {
     font-size: 17px;
-    color: #b0b0b0;
+    color: var(--bs-body-second-color);
 }
 
 .profile_block_info {
@@ -308,43 +363,43 @@ header .asside-right-h {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #232324;
+    background-color: var(--bs-second-bg);
     padding: 20px;
     border-radius: 15px;
     width: 100%;
     max-width: 120px;
-    color: #b0b0b0;
+    color: var(--bs-body-second-color);
 }
 
 ._block_info span {
     font-size: 18px;
     font-weight: bold;
-    color: white;
+    color: var(--bs-body-color);
 }
 
 ._block_info small {
     font-size: 14px;
-    color: #b0b0b0;
+    color: var(--bs-body-second-color);
 }
 
 /* Стили для поиска */
 .input_{
     min-width: 100%;
-    background-color: #2D2D2D;
+    background-color: var(--bs-second-bg);
     padding: 10px 15px;
     outline: none;
-    border: 1px solid #252525;
+    border: 1px solid var(--bs-second-bg);
     border-radius: 10px;
-    color: #FFFFFF;
+    color: var(--bs-body-second-color);
     transition: border .2s;
     margin-bottom: 15px;
 }
 .input_:hover{
-    border: 1px solid #2ea188;
+    border: 1px solid var(--bs-accent-color-hover);
 }
 .input_:active, .input_:focus-visible{
-    border: 1px solid #49E2C1;
-    caret-color: #49E2C1;
+    border: 1px solid var(--bs-accent-color);
+    caret-color: var(--bs-accent-color);
 }
 
 
@@ -357,6 +412,325 @@ header .asside-right-h {
     display: block;
 }
 
+/* Стили для страницы настройки */
+.selected_themes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Адаптивная сетка */
+    gap: 10px;
+    text-align: center;
+}
+.selected_theme_block{
+    font-size: 17px;
+    color: var(--bs-body-color);
+}
+.d-none{
+    display: none;
+}
+.theme_block{
+    text-align: start;
+    border-radius: 10px;
+    padding: 10px;
+    outline: 1px solid var(--bs-second-bg);
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    transition: .1s transform ease-in;
+    cursor: pointer;
+    margin-bottom: 5px;
+    pointer-events: none;
+    user-select: none;
+}
+.theme_block:hover{
+    transform: scale(1.01);
+}
+.theme_block.dark{
+    background-color: #161617;
+}
+.theme_block.dark span{
+    font-size: 17px;
+    color: #c9cccf;
+    width: 100%;
+}
+.theme_block.dark a{
+    color: #49e2c1;
+    width: 100%;
+}
+.theme_block.dark button{
+    min-width: 46px;
+    height: 46px;
+    background-color: #2d2d2d;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+.theme_block.light{
+    background-color: #f1f3f5;
+}
+.theme_block.light span{
+    font-size: 17px;
+    color: #161617;
+    width: 100%;
+}
+.theme_block.light a{
+    color: #49e2c1;
+    width: 100%;
+}
+.theme_block.light button{
+    min-width: 46px;
+    height: 46px;
+    background-color: #b8b8b8;
+    border: none;
+    border-radius: 8px;
+    color: #161617;
+    cursor: pointer;
+    width: 100%;
+}
+.dropdown{
+    padding: 20px;
+    color: var(--bs-body-color);
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bs-second-bg);
+    margin: 10px 0px;
+    border-radius: 10px;
+}
+.dropdown select{
+    background-color: var(--bs-second-bg);
+    color: var(--bs-body-color);
+    font-size: 14px;
+    border: none;
+    outline: none;
+    text-align: end;
+}
+.dropdown select:hover{
+    color: var(--bs-white-color);
+}
+.dropdown option{
+    font-size: 14px;
+}
+.safety{
+    padding: 20px;
+    color: var(--bs-body-color);
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bs-second-bg);
+    margin: 10px 0px;
+    border-radius: 10px;
+}
+.safety small{
+    color: var(--bs-body-second-color);
+    font-size: 14px;
+    font-family: monospace;
+}
+.safety a{
+    color: var(--bs-accent-color);
+    font-size: 14px;
+}
+input[type="radio"] {
+    appearance: none; /* Скрываем стандартный стиль радио */
+    visibility: hidden; /* Либо скрываем визуально */
+    position: absolute; /* Чтобы не занимал место в документе */
+}
+input[type="radio"]:checked + label .theme_block.dark {
+    outline: 2px solid var(--bs-accent-color);
+    box-shadow: 0px 0px 3px var(--bs-accent-color);
+}
+input[type="radio"]:checked + label .theme_block.light {
+    outline: 2px solid var(--bs-accent-color);
+    box-shadow: 0px 0px 3px var(--bs-accent-color);
+}
+
+
+/* Стили для чата */
+.main-side{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-left: 1px solid var(--bs-second-bg);
+    border-right: 1px solid var(--bs-second-bg);
+    overflow: hidden;
+}
+.btn-svg, .btn-svg-exit{
+    background-color: var(--bs-second-bg);
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+}
+.btn-svg img, .btn-svg-exit img{
+    width: 20px;
+    height: 20px;
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bs-second-bg);
+    box-shadow: 0px 5px 5px var(--bs-body-bg);
+    z-index: 1000;
+}
+
+.user-header-info {
+    background-color: var(--bs-second-bg);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 6px;
+    overflow: hidden; /* Обеспечивает, что содержимое не вылезает за пределы блока */
+}
+  
+.user-header-info-logo {
+    height: 48px;
+    width: 48px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+  
+.user-header-info div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1; /* Занимает оставшееся пространство */
+    min-width: 0; /* Для предотвращения расширения блока */
+}
+  
+.user-header-info p, .user-header-info span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+  
+.user-header-info p {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--bs-body-color);
+    margin: 0;
+    padding-bottom: 5px;
+}
+  
+.user-header-info span {
+    font-size: 13px;
+    color: var(--bs-body-second-color);
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}
+  
+.date {
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+}
+  
+.date_info {
+    font-size: 12px;
+    color: var(--bs-body-second-color);
+}
+  
+.messages {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+  
+.message {
+    max-width: 60%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 17px;
+    color: var(--bs-body-color);
+}
+.lmessage {align-self: flex-start;}
+.rmessage {align-self: flex-end;}
+  
+.message .mes{
+    display: flex; /* Flexbox для содержимого */
+    flex-direction: column;
+    background-color: var(--bs-second-bg);
+    padding: 10px;
+    border-radius: 8px;
+    position: relative; /* Отменить absolute */
+    word-wrap: break-word;
+}
+
+.message small{
+    font-size: 11px;
+    color: var(--bs-body-color);
+    margin-top: 5px;
+    align-self: flex-end;
+}
+.message img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.option_block {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--bs-second-bg);
+    z-index: 1000;
+    box-shadow: 0px -5px 5px var(--bs-body-bg);
+}
+  
+.option_block button {
+    min-width: 46px;
+    height: 46px;
+    background-color: var(--bs-second-bg);
+    border: none;
+    border-radius: 8px;
+    color: var(--bs-white-color);
+    cursor: pointer;
+}
+.file{
+    margin-right: 10px;
+}
+.emoji, .micro{
+    margin-left: 10px;
+}
+
+.option_block button:hover{
+    background-color: var(--bs-third-bg);
+}
+
+
+.option_block input{
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 8px;
+    background-color: var(--bs-second-bg);
+    caret-color: var(--bs-body-color);
+    color: var(--bs-body-color);
+    border: none;
+    outline: none;
+}
+.option_block input:focus{
+    border: none;
+    outline: none;
+}
+.option_block input:active, .option_block input:hover, .option_block input:focus{
+    background-color: var(--bs-third-bg);
+}
+
 
 /* Адаптация */
 @media (max-width: 496px) {
@@ -367,11 +741,14 @@ header .asside-right-h {
 }
 @media (max-width: 745px) {
     .asside-right, .asside-left{ display: none; }
-    .asside-center{ width: 100%; }
+    .asside-center{ width: 100%; padding: 0px;}
 }
 @media (max-width: 992px) {
     .asside-right, header .asside-center-h{ display: none; }
     header .asside-left-h, header .asside-right-h { width: 100%; }
+    .asside-center{ width: 100%; padding-top: 0px;}
+    .main-side{ border-radius: 0px; }
+    nav{ display: none; }
 }
 @media (min-width: 992px) {
     .container { max-width: 960px; }

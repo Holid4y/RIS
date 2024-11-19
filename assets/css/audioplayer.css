@@ -5,7 +5,6 @@
     gap: 15px;
     padding: 10px 0px;
     border-radius: 10px;
-    color: #eee;
     font-family: Arial, sans-serif;
     width: 100%;
     max-height: 100%;
@@ -51,19 +50,19 @@
 #track-title {
     font-size: 15px;
     font-weight: bold;
-    color: #CCCCCC;
+    color: var(--bs-body-color);
 }
 
 #artist-name {
     font-size: 13px;
-    color: #CCCCCC;
+    color: var(--bs-body-second-color);
 }
 
 .time-volume {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #CCCCCC;
+    color: var(--bs-body-second-color);
     font-size: 13px;
 }
 
@@ -94,7 +93,7 @@ input[type=range] {
     appearance: none;
     outline: none;
     height: 4px;
-    background: linear-gradient(to right, #49E2C1 0%, #49E2C1 0%, #2E2E2E 0%);
+    background: linear-gradient(to right, var(--bs-accent-color)   0%, var(--bs-accent-color) 0%, var(--bs-third-bg) 0%);
     cursor: pointer;
     border-radius: 5px;
 }
@@ -142,7 +141,7 @@ input[type=range]::-ms-thumb {
     height: 4px;
     border-radius: 5px;
     outline: none;
-    background: linear-gradient(to right, #49E2C1 0%, #49E2C1 0%, #2E2E2E 0%);
+    background: linear-gradient(to right, var(--bs-accent-color)   0%, var(--bs-accent-color) 0%, var(--bs-third-bg) 0%);
 }
 
 /* Скругленный стиль прогресс-бара */
@@ -164,7 +163,7 @@ input[type=range]::-ms-thumb {
     width: 100%;
     max-width: 100px;
     height: 4px;
-    background: linear-gradient(to right, #49E2C1 0%, #2E2E2E 0%);
+    background: linear-gradient(to right, var(--bs-accent-color) 0%, var(--bs-third-bg) 0%);
     border-radius: 5px;
     outline: none;
     cursor: pointer;

@@ -37,7 +37,7 @@ audio.addEventListener('timeupdate', () => {
 
     const progressPercent = (currentTime / duration) * 100;
     progressBar.value = progressPercent;
-    progressBar.style.background = `linear-gradient(to right, #49E2C1 ${progressPercent}%, #2E2E2E ${progressPercent}%)`;
+    progressBar.style.background = `linear-gradient(to right, var(--bs-accent-color) ${progressPercent}%, var(--bs-third-bg) ${progressPercent}%)`;
 
     currentTimeEl.textContent = formatTime(currentTime);
     durationEl.textContent = formatTime(duration);
@@ -53,14 +53,14 @@ window.addEventListener('DOMContentLoaded', () => {
     const savedVolume = localStorage.getItem('volume') || 100;
     volumeSlider.value = savedVolume;
     audio.volume = savedVolume / 100;
-    volumeSlider.style.background = `linear-gradient(to right, #49E2C1 ${savedVolume}%, #2E2E2E ${savedVolume}%)`;
+    volumeSlider.style.background = `linear-gradient(to right, var(--bs-accent-color) ${savedVolume}%, var(--bs-third-bg) ${savedVolume}%)`;
 });
 
 // Save volume to localStorage whenever it changes
 volumeSlider.addEventListener('input', () => {
     const volumePercent = volumeSlider.value;
     audio.volume = volumePercent / 100;
-    volumeSlider.style.background = `linear-gradient(to right, #49E2C1 ${volumePercent}%, #2E2E2E ${volumePercent}%)`;
+    volumeSlider.style.background = `linear-gradient(to right, var(--bs-accent-color) ${volumePercent}%, var(--bs-third-bg) ${volumePercent}%)`;
     localStorage.setItem('volume', volumePercent); // Save volume to localStorage
 });
 // Format time in mm:ss
