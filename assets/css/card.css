@@ -1,0 +1,402 @@
+/* Основной контейнер секции */
+.media-section {
+    margin-bottom: 15px;
+}
+
+/* Заголовок секции */
+.top-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #c9cccf;
+}
+
+.view-all {
+    font-size: 14px;
+    color: #c9cccf;
+    text-decoration: none;
+}
+
+/* Карточки в сетке альбомов */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.media-section-friends{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    gap: 10px;
+    background-color: #232324;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+@media (max-width: 496px) {
+    .media-section-friends{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        gap: 10px;
+        background-color: #232324;
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
+.section-friend{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    transition: .1s background-color ease-in;
+}
+.section-friend:hover{
+    background-color: #2e2e2e;
+}
+.section-friend img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+.section-friend span{
+    font-size: 14px;
+    color: #c9cccf;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.card {
+    background-color: #232324;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #FFFFFF;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease-in-out;
+}
+
+.media-text-block{
+    padding: 0px 5px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.card h2{
+    color: #C9CCCF;
+    margin-bottom: 10px;
+}
+.card small{
+    color: #C9CCCF;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.animate-scale:hover {
+    transform: scale(1.01);
+}
+
+.media-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.media-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.media-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.media-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+/*  */
+/* Основной контейнер */
+.media-img-js {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.media-img-js img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+
+.media-overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    width: 100%;
+    height: 100%;
+    display: none; /* По умолчанию скрыт */
+}
+
+/* Основные стили для галереи */
+.media-img {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.media-overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px;
+    display: none; /* Можно настроить для показа количества изображений */
+}
+
+.hr{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    outline: none;
+    border: .1rem solid #5f5f5f;
+    border-radius: 10px;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    border: 1px solid #252525;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 2em;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transform: translateY(-50%);
+    padding: 5px;
+}
+
+#prev-img { left: 10px; }
+#next-img { right: 10px; }
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+/* Футер карточки альбомов */
+.media-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+/* Футер карточки новостей */
+.media-footer-news {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    gap: 35px;
+}
+
+.media-info {
+    display: flex;
+    flex-direction: column;
+    color: #C9CCCF;
+    min-width: 120px;
+    max-width: 450px;
+}
+
+.group_message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.media-info .group_message img{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.media-info span:first-child {
+    font-size: 17px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.media-info a, .media-info small {
+    max-width: 100%;
+    font-size: 14px;
+    color: #C9CCCF;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Кнопка и иконка */
+.icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.icon-btn img {
+    width: 25px;
+    height: 25px;
+}
+
+/* Список треков */
+.media-list {
+    display: grid;
+    gap: 10px;
+}
+
+.media-list.cols2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+/* Элементы списка треков */
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #232324;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.left-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.left-content img {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+}
+
+.time {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.right-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gold{
+    border: 1px solid #F2DB2B;
+}
+
+.silver{
+    border: 1px solid #4AD4F0;
+}
+
+.bronz{
+    border: 1px solid #6C757D;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 1200px) {
+    .media-list.cols2{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .media-grid {
+        grid-template-columns: repeat(3, 1fr);; /* Одна карточка в строке */
+    }
+
+    .right-content {
+        align-self: flex-end;
+    }
+}
+@media (max-width: 560px) {
+    .media-grid {
+        grid-template-columns: repeat(2, 1fr);; /* Одна карточка в строке */
+    }
+}

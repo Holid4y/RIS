@@ -1,0 +1,179 @@
+.audio-player {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0px;
+    border-radius: 10px;
+    color: #eee;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    max-height: 100%;
+}
+
+.controls {
+    display: flex;
+    gap: 5px;
+}
+
+.track-info {
+    display: flex;
+    align-items: center;
+    text-align: start;
+    gap: 10px;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-controls{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+#cover {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+}
+
+.track-details {
+    display: flex;
+    flex-direction: column;
+}
+
+#track-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #CCCCCC;
+}
+
+#artist-name {
+    font-size: 13px;
+    color: #CCCCCC;
+}
+
+.time-volume {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #CCCCCC;
+    font-size: 13px;
+}
+
+.volume {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.volume-icon {
+    font-size: 18px;
+}
+
+#volume-slider {
+    width: 70px;
+}
+
+.progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+input[type=range] {
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    height: 4px;
+    background: linear-gradient(to right, #49E2C1 0%, #49E2C1 0%, #2E2E2E 0%);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Стили для "track" (основной полосы ползунка) */
+input[type=range]::-webkit-slider-runnable-track {
+    height: 4px;
+    background-color: transparent;
+}
+
+/* Скрываем "thumb" для браузеров на основе WebKit (например, Chrome, Safari) */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0; /* Делаем "thumb" невидимым */
+    height: 0;
+    background: transparent;
+    border: none;
+}
+
+/* Скрываем "thumb" для Firefox */
+input[type=range]::-moz-range-thumb {
+    width: 0; /* Делаем "thumb" невидимым */
+    height: 0;
+    background: transparent;
+    border: none;
+}
+
+/* Скрываем "thumb" для Internet Explorer и Edge */
+input[type=range]::-ms-thumb {
+    width: 0; /* Делаем "thumb" невидимым */
+    height: 0;
+    background: transparent;
+    border: none;
+}
+
+/* Прогресс и ползунок громкости */
+
+/* Обновление стиля прогресс-бара */
+#progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+    outline: none;
+    background: linear-gradient(to right, #49E2C1 0%, #49E2C1 0%, #2E2E2E 0%);
+}
+
+/* Скругленный стиль прогресс-бара */
+#progress-bar::-webkit-slider-runnable-track {
+    height: 4px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+/* Убираем thumb */
+#progress-bar::-webkit-slider-thumb, 
+#progress-bar::-moz-range-thumb, 
+#progress-bar::-ms-thumb {
+    display: none;
+}
+#volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    max-width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, #49E2C1 0%, #2E2E2E 0%);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+#progress-bar::-webkit-slider-thumb, #volume-slider::-webkit-slider-thumb {
+    display: none; /* Убираем кружок */
+}
+
+#progress-bar::-moz-range-thumb, #volume-slider::-moz-range-thumb {
+    display: none;
+}

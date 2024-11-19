@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Убираем прокрутку у body */
+    background-color: #161617; /* #222226 */
+}
+/* Стили для header */
+header {
+    height: 60px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #232324; /* #17161b */
+    z-index: 10;
+}
+
+header .asside-left-h {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 18%;
+    padding-left: 10px;
+}
+header .asside-center-h {
+    display: flex;
+    flex: 1;
+    overflow-y: auto;
+    height: 100%;
+    scrollbar-width: none;
+    padding: 0px 10px;
+    align-items: center;
+    justify-content: center;
+}
+header .asside-right-h {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 18%;
+    padding-right: 10px;
+}
+
+.jost-custom {
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 30px;
+    color: #c9cccf;
+}
+
+.avatar{
+    height: 70%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Контейнер для header и main */
+.container{
+    display: flex;
+    flex: 1;
+    height: 100%;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Левый и правый ассайды */
+.asside-left,
+.asside-right {
+    width: 18%;
+    min-width: 180px;
+    /* background-color: transparent; */
+    padding-top: 10px;
+}
+
+/* Центр */
+.asside-center{
+    flex: 1;
+    overflow-y: auto;
+    height: calc(100vh - 60px);
+    scrollbar-width: none;
+    padding: 0px 10px;
+    padding-top: 10px;
+}
+
+.asside-center::-webkit-scrollbar {
+    display: none;
+}
+
+/* Стили для кнопок */
+.btn{
+    font-size: 14px;
+    background-color: #2D2D2D;
+    padding: 10px 15px;
+    outline: none;
+    border: 1px solid #252525;
+    border-radius: 10px;
+    color: #FFFFFF;
+    transition: all .2s;
+}
+.btn.primary{
+    background-color: #49E2C1;
+    border: 1px solid #49E2C1;
+}
+.btn.secondary{
+    border: 1px solid #49E2C1;
+    color: #49E2C1;
+}
+.btn.danger{
+    background-color: #232324;
+    border: 1px solid #E24949;
+    color: #E24949;
+}
+.btn.dangerLarg{
+    background-color: #232324;
+    padding: 15px 0px;
+    border: 1px solid #E24949;
+    color: #E24949;
+}
+.btn.warning{
+    border: 1px solid #E2B749;
+    color: #E2B749;
+}
+.btn.dark{
+    background-color: #232324;
+    border: 1px solid #232324;
+    color: #c9cccf;
+}
+
+.btn.primary:hover{
+    background-color: #2ea188;
+    border: 1px solid #49E2C1;
+}
+.btn.secondary:hover{
+    background-color: #49E2C1;
+    color: #FFFFFF;
+}
+.btn.danger:hover{
+    background-color: #E24949;
+    color: #FFFFFF;
+}
+.btn.warning:hover{
+    background-color: #E2B749;
+    color: #FFFFFF;
+}
+.btn.dark:hover{
+    background-color: #232324;
+    border: 1px solid #c9cccf;
+    color: #c9cccf;
+}
+.btn.light:hover{
+    border: 1px solid #49E2C1;
+    color: #49E2C1;
+}
+
+.btn.primary:active{
+    background-color: #247e6a;
+    border: 1px solid #247e6a;
+}
+.btn.secondary:active{
+    background-color: #2ea188;
+    color: #FFFFFF;
+}
+.btn.danger:active{
+    background-color: #bd3d3d;
+    color: #FFFFFF;
+}
+.btn.warning:active{
+    background-color: #b6933b;
+    color: #FFFFFF;
+}
+.btn.dark:active{
+    background-color: #232324;
+    border: 1px solid #c9cccf;
+    color: #c9cccf;
+}
+.btn.light:active{
+    border: 1px solid #247e6a;
+    color: #247e6a;
+}
+
+.group-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.group-btn > .btn {
+    max-width: 130px;
+}
+.group-btn .accordion {
+    flex-grow: 1;
+    text-align: left;
+}
+.group-btn .accordion.show{
+    background-color: #232324;
+    border: 1px solid #c9cccf;
+    color: #c9cccf;
+}
+.end {
+    margin-left: auto;
+}
+
+
+/* Боковое меню */
+.menu{
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    line-height: 2;
+    color: #c9cccf;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+.menu li.active {
+    background-color: #232324;
+}
+.menu li:hover {
+    background-color: #232324;
+}
+.menu li:active {
+    background-color: #222224;
+}
+
+.menu li span{
+    margin-left: 15px;
+}
+.menu li img{
+    height: 20px;
+    width: 20px;
+}
+
+/* Стили Профиля */
+.profile_header {
+    color: white;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.profile_content {
+    display: flex;
+    justify-content: space-between; /* Разделяет элементы на максимальное расстояние */
+    width: 100%;
+    align-items: center;
+}
+
+.profile_header-main {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile_header-main .logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.profile_header-main h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.profile_header-main h3 {
+    font-size: 17px;
+    color: #b0b0b0;
+}
+
+.profile_block_info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+._block_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #232324;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    color: #b0b0b0;
+}
+
+._block_info span {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+._block_info small {
+    font-size: 14px;
+    color: #b0b0b0;
+}
+
+
+/* Адаптация */
+@media (max-width: 496px) {
+    .profile_content{
+        display: grid;
+        gap: 10px;
+    }
+}
+@media (max-width: 745px) {
+    .asside-right, .asside-left{ display: none; }
+    .asside-center{ width: 100%; }
+}
+@media (max-width: 992px) {
+    .asside-right, header .asside-center-h{ display: none; }
+    header .asside-left-h, header .asside-right-h { width: 100%; }
+}
+@media (min-width: 992px) {
+    .container { max-width: 960px; }
+}
+@media (min-width: 1200px) {
+    .container { max-width: 1140px; }
+}
+@media (min-width: 1400px) {
+    .container { max-width: 1320px; }
+}
