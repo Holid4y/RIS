@@ -28,7 +28,12 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
+    overflow-x: scroll; /* Включаем горизонтальную прокрутку */
+    overflow-y: hidden; /* Убираем вертикальный скролл */
+    padding-bottom: 10px;
 }
+
+
 
 .media-section-friends{
     display: grid;
@@ -41,15 +46,22 @@
 }
 
 @media (max-width: 496px) {
-    .media-section-friends{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        gap: 10px;
-        background-color: #232324;
-        padding: 10px;
-        border-radius: 10px;
-    }
+    .media-section-friends{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 496px) {
+    .media-section-friends{ grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 745px) {
+    .media-section-friends{ grid-template-columns: repeat(5, 1fr); }
+}
+@media (min-width: 992px) {
+    .media-section-friends{ grid-template-columns: repeat(6, 1fr); }
+}
+@media (min-width: 1200px) {
+    .media-section-friends{ grid-template-columns: repeat(7, 1fr); }
+}
+@media (min-width: 1400px) {
+    .media-section-friends{ grid-template-columns: repeat(8, 1fr); }
 }
 .section-friend{
     display: grid;
@@ -80,6 +92,7 @@
 .card {
     background-color: #232324;
     border-radius: 10px;
+    min-width: 165px;
     overflow: hidden;
     color: #FFFFFF;
     padding: 5px;
@@ -376,27 +389,4 @@
 
 .bronz{
     border: 1px solid #6C757D;
-}
-
-/* Мобильная адаптация */
-@media (max-width: 1200px) {
-    .media-list.cols2{
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 10px;
-    }
-}
-@media (max-width: 768px) {
-    .media-grid {
-        grid-template-columns: repeat(3, 1fr);; /* Одна карточка в строке */
-    }
-
-    .right-content {
-        align-self: flex-end;
-    }
-}
-@media (max-width: 560px) {
-    .media-grid {
-        grid-template-columns: repeat(2, 1fr);; /* Одна карточка в строке */
-    }
 }

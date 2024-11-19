@@ -108,6 +108,9 @@ header .asside-right-h {
     border-radius: 10px;
     color: #FFFFFF;
     transition: all .2s;
+    width: 100%;
+    min-width: 120px;
+    text-align: center;
 }
 .btn.primary{
     background-color: #49E2C1;
@@ -195,13 +198,19 @@ header .asside-right-h {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    width: 100%;
+    overflow-x: scroll; /* Включаем горизонтальную прокрутку */
+    overflow-y: hidden; /* Убираем вертикальный скролл */
+    scrollbar-width: none; /* Скрываем скроллбар в Firefox */
+}
+.group-btn::-webkit-scrollbar {
+    display: none; /* Скрываем скроллбар в Chrome, Safari и Edge */
 }
 .group-btn > .btn {
     max-width: 130px;
 }
 .group-btn .accordion {
     flex-grow: 1;
-    text-align: left;
 }
 .group-btn .accordion.show{
     background-color: #232324;
@@ -300,10 +309,10 @@ header .asside-right-h {
     flex-direction: column;
     align-items: center;
     background-color: #232324;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     width: 100%;
+    max-width: 120px;
     color: #b0b0b0;
 }
 
@@ -316,6 +325,36 @@ header .asside-right-h {
 ._block_info small {
     font-size: 14px;
     color: #b0b0b0;
+}
+
+/* Стили для поиска */
+.input_{
+    min-width: 100%;
+    background-color: #2D2D2D;
+    padding: 10px 15px;
+    outline: none;
+    border: 1px solid #252525;
+    border-radius: 10px;
+    color: #FFFFFF;
+    transition: border .2s;
+    margin-bottom: 15px;
+}
+.input_:hover{
+    border: 1px solid #2ea188;
+}
+.input_:active, .input_:focus-visible{
+    border: 1px solid #49E2C1;
+    caret-color: #49E2C1;
+}
+
+
+/* Стили для Accordion */
+.accordion-content {
+    display: none;  
+    margin-top: 10px;
+}
+.accordion-content.show {
+    display: block;
 }
 
 
