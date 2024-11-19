@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/auth.css">
+    <title>Auth Forms</title>
+</head>
+<body>
+    <div class="container-main">
+        <div class="auth">
+            <div class="form-container">
+                <form class="form login-form">
+                    <h1>Авторизация</h1>
+                    <div class="icons">
+                        <a href="#" class="icon link"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#" class="icon link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="icon link"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="icon link"><i class="fa-brands fa-apple"></i></a>
+                    </div>
+                    <span>используйте свою почту для входа</span>
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Пароль">
+                    <p><span>Не зарегистрированы?</span><button type="button" class="link toggle-button" onclick="toggleForm(event)">Регистрация</button></p>
+                    <button type="button" class="btn-main">Войти</button>
+                </form>
+
+                <form class="form registration-form">
+                    <h1>Регистрация</h1>
+                    <div class="icons">
+                        <a href="#" class="icon link"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#" class="icon link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="icon link"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="icon link"><i class="fa-brands fa-apple"></i></a>
+                    </div>
+                    <span>используйте свою почту для регистрации</span>
+                    <input type="text" placeholder="Логин">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Пароль">
+                    <p><span>Уже зарегистрированы?</span><button type="button" class="link toggle-button" onclick="toggleForm(event)">Войти</button></p>
+                    <button type="button" class="btn-main">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/auth.js"></script>
+</body>
+</html>
